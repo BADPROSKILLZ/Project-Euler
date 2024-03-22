@@ -4,7 +4,7 @@ Find the largest prime factor of 600851475143
 
 def primeCheck(primeCandidate: int) -> bool:
     """
-    Checks if the number inputted is prime.
+    Checks if the number input is prime.
 
     :param primeCandidate: Number to check prime status of.
     :return: Returns true if prime, false if composite.
