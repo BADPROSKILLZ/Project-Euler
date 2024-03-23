@@ -3,6 +3,13 @@ Find the difference between the sum of the squares of the first one hundred natu
 """
 
 def squareSum(highestNum: int = 100) -> int:
+    """
+    Finds the square of the sum of all the numbers up to and including the parameter.
+    
+    :param highestNum: Number that indicates the end of the sum range.
+    :return: Returns the square of the sum of all the numbers up to and including the parameter.
+    """
+    
     sum = 0
     for num in range(1, highestNum+1):
         sum += num
@@ -10,6 +17,12 @@ def squareSum(highestNum: int = 100) -> int:
     return (sum ** 2)
 
 def sumOfSquares(highestNum: int = 100) -> int:
+    """
+    Finds the sum of the squares of all the numbers up to and including the parameter.
+    
+    :param highestNum: Number that indicates the end of the sum range.
+    :return: Returns the sum of the squares of all the numbers up to and including the parameter.
+    """
     sum = 0
     for num in range(1, highestNum+1):
         sum += num ** 2
