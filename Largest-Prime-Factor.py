@@ -1,5 +1,5 @@
 """
-Find the largest prime factor of 600851475143
+Problem 3: Find the largest prime factor of 600851475143
 """
 
 def primeCheck(primeCandidate: int) -> bool:

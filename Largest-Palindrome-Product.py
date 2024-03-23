@@ -1,3 +1,7 @@
+"""
+Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.
+"""
+
 def isPalindrome(number):
 	num = str(number)
 	palindrome = True

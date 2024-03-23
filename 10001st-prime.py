@@ -1,5 +1,5 @@
 """
-Find the 10_001st prime number.
+Problem 7: Find the 10_001st prime number.
 """
 
 def primeCheck(primeCandidate: int) -> bool:
