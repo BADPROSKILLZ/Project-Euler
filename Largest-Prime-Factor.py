@@ -1,5 +1,6 @@
 """
 Problem 3: Find the largest prime factor of 600851475143
+Answer: 6857
 """
 
 def primeCheck(primeCandidate: int) -> bool:
@@ -10,6 +11,9 @@ def primeCheck(primeCandidate: int) -> bool:
     :return: Returns true if prime, false if composite.
     """
     isPrime = True
+    if primeCandidate == 2:
+        return isPrime
+    
     for num in range(int(primeCandidate / 2)): #Check only first half, rest will be covered automatically
         num += 2
         if (primeCandidate % num == 0): #Check if num is a factor

@@ -1,6 +1,7 @@
 """
 Problem 9: Pythagorean Triplet means a<b<c and a^2 + b^2 = c^2. There exists exactly one Pythagorean triplet for which a+b+c=1000. 
            Find the product of abc.
+Answer: 31875000
 """
 
 def checkPythagoreanTriplet(a: int, b: int, c: int) -> bool:

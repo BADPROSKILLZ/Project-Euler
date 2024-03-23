@@ -1,5 +1,6 @@
 """
 Problem 5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+Answer: 232792560
 """
 
 #make a function to check if some number is prime
@@ -11,6 +12,9 @@ def primeCheck(primeCandidate: int) -> bool:
     :return: Returns true if prime, false if composite.
     """
     isPrime = True
+    if primeCandidate == 2:
+        return isPrime
+    
     for num in range(int(primeCandidate / 2)): #Check only first half, rest will be covered automatically
         num += 2
         if (primeCandidate % num == 0): #Check if num is a factor

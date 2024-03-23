@@ -1,5 +1,6 @@
 """
 Problem 1: Find the sum of all the multiples of 3 or 5 below 1000.
+Answer: 233168
 """
 
 def multiplesOf3And5(upperLimit: int = 1_000) -> int:

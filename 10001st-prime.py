@@ -1,5 +1,6 @@
 """
-Problem 7: Find the 10_001st prime number.
+Problem 7: Find the 10_001st prime number. 
+Answer: 104743
 """
 
 def primeCheck(primeCandidate: int) -> bool:
@@ -10,6 +11,9 @@ def primeCheck(primeCandidate: int) -> bool:
     :return: Returns true if prime, false if composite.
     """
     isPrime = True
+    if primeCandidate == 2:
+        return isPrime
+    
     for num in range(int(primeCandidate / 2)): #Check only first half, rest will be covered automatically
         num += 2
         if (primeCandidate % num == 0): #Check if num is a factor
@@ -17,8 +21,6 @@ def primeCheck(primeCandidate: int) -> bool:
     
     return isPrime
 
-#outer loop from 1-10_001 to count num of primes found
-    #inner loop to check if 
 
 primeArray = [0]*10001 
 primeArray[0], primeArray[1], primeArray[2] = 2, 3, 5

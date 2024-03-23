@@ -1,5 +1,6 @@
 """
-Problem 10: Find the sum of all the primes below two million. Answer is 142913828922, ran overnight
+Problem 10: Find the sum of all the primes below two million. 
+Answer: 142913828922, ran overnight
 """
 
 def primeCheck(primeCandidate: int) -> bool:
@@ -10,6 +11,9 @@ def primeCheck(primeCandidate: int) -> bool:
     :return: Returns true if prime, false if composite.
     """
     isPrime = True
+    if primeCandidate == 2:
+        return isPrime
+    
     for num in range(int(primeCandidate / 2)): #Check only first half, rest will be covered automatically
         num += 2
         if (primeCandidate % num == 0): #Check if num is a factor
