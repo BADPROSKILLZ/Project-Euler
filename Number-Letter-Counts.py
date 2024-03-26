@@ -15,6 +15,10 @@ def countLetters(string: str) -> int:
     string = string.replace(" ", "").replace("-", "")
     return len(string)
 
+def replaceLastInstance(s, old, new, occurrence):
+     li = s.rsplit(old, occurrence)
+     return new.join(li)
+
 def stringifyNum(number: int) -> str:
     returnString = ""
     numString = str(number)
@@ -23,10 +27,17 @@ def stringifyNum(number: int) -> str:
         match char:
             case "1":
                 returnString += "one "
-                if(numString[char] == 0 and numLength == 4):
-                    returnString += "thousand "
-                elif(numString[char] == 2 and numString[numString[char]+1] == "1"):
-                    ...
+                match numLength:
+                    case 1:
+                        if(numString[char == 0]):
+                            returnString += "thousand "
+                        if(numString[char == 2] and numString["1" == numString.index(char)+1]):
+                            returnString.replace("one", "ten", -1)
+                    case 2:
+
+                    case 3:
+
+                    case 4:
                 
             
             case "2":
@@ -54,3 +65,5 @@ def stringifyNum(number: int) -> str:
                 returnString += "nine "
 
     return returnString
+
+print(stringifyNum(1))
