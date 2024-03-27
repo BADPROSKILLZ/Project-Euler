@@ -19,6 +19,40 @@ def replaceLastInstance(s, old, new, occurrence):
      li = s.rsplit(old, occurrence)
      return new.join(li)
 
+def toUmpteen(string: str, char: str, replace: int) -> str:
+    if(string[char == 2] and string["0" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "ten", 1)
+    
+    elif(string[char == 2] and string["1" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["2" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["3" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["4" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["5" == string.index(char) + replace]):   
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["6" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["7" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["8" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    elif(string[char == 2] and string["9" == string.index(char) + replace]):
+        returnString = replaceLastInstance(returnString, "one", "eleven", 1)
+    
+    return returnString
+
+    
 def stringifyNum(number: int) -> str:
     returnString = ""
     numString = str(number)
@@ -29,16 +63,16 @@ def stringifyNum(number: int) -> str:
                 returnString += "one "
                 match numLength:
                     case 1:
+                        ...
+                    case 2:
+                        ...
+                    case 3:
+                        ...
+                    case 4:
                         if(numString[char == 0]):
                             returnString += "thousand "
-                        if(numString[char == 2] and numString["1" == numString.index(char)+1]):
-                            returnString.replace("one", "ten", -1)
-                    case 2:
-
-                    case 3:
-
-                    case 4:
-                
+                        returnString = toUmpteen(returnString, char, returnString.rindex(char))
+                        
             
             case "2":
                 returnString += "two "
@@ -66,4 +100,4 @@ def stringifyNum(number: int) -> str:
 
     return returnString
 
-print(stringifyNum(1))
+print(stringifyNum(10))
