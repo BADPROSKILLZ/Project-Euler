@@ -11,18 +11,52 @@ Problem 19: You are given the following information:
 
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 """
+def numDaysInMonth(month: int = 1, year: int = 1900) -> int:
+    leapYear = False
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):                                                                                                                                                                                                                                                                   
+        leapYear = True
 
-def numDaysIn20thCentury() -> int:
-    sumDays = 7 * 31
-    sumDays += 30*4
-    sumDays += 28
-    sumDays *= 100
-    for yr in range(1901, 2001):
-        if(yr % 4 == 0):
-            sumDays += 1
+    if month in [1, 3, 5, 7, 8, 10, 12]:
+        return 31
+    elif month in [4, 6, 9, 11]:
+        return 30
+    else:
+        if leapYear:
+            return 29
+        else:
+            return 28
+
+def firstOfTheMonth(month: int, year: int) -> str:
+    firstDay = 1 #Monday
+    for yr in range(1900, year+1):
+        for mnth in range(1, month):
+            firstDay += numDaysInMonth(mnth, yr) % 7 #Weekday increased
+            firstDay = (firstDay % 7 if firstDay != 7 else 7) #Fixes number being greater than 7
     
-    return sumDays
+    match firstDay:
+        case 1:
+            return "Monday"
+        case 2:
+            return "Tuesday"
+        case 3:
+            return "Wednesday"
+        case 4:
+            return "Thursday"
+        case 5:
+            return "Friday"
+        case 6:
+            return "Saturday"
+        case 7:
+            return "Sunday"
+        case _:
+            pass
 
-numSundays = int((numDaysIn20thCentury() - 6) / 7)
-sundaysTheFirst = numSundays / 6
-print(sundaysTheFirst)
+
+numSundays = 0
+for yr in range(1901, 2001):
+    for mnth in range(1, 13):
+        if firstOfTheMonth(mnth, yr) == "Sunday":
+            numSundays += 1
+        
+print(numSundays) #NOT YET WORKING
+            
