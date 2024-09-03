@@ -15,34 +15,17 @@ is less than this limit.
 Answer: 
 """
 
-def numberIdentifier(num: int) -> bool:
+def numberClassifier(num: int):
     sum = 0
-    divisors = []
     for i in range(1, num):
-        if(num % i == 0 and i not in divisors):
+        if num % i == 0:
             sum += i
-            divisors.append(i)
-        
-    if sum > num:
-        return True
+            #print(i, " ", sum)
+    
+    if sum > num: return "a"
+    elif sum < num: return "d"
+    else: return "p"
 
-abundantList = []
+userInput = int(input("Enter a number: "))
+print(numberClassifier(userInput))
 
-for i in range(1, 28123):
-    if numberIdentifier(i):
-        abundantList.append(i)
-
-combinables = [0]*28124
-for i in range(len(abundantList)):
-    for j in range(i, len(abundantList)):
-        if abundantList[i] + abundantList[j] < 28123 and combinables[abundantList[i] + abundantList[j]] == 0:
-            combinables[abundantList[i] + abundantList[j]] = abundantList[i] + abundantList[j]
-            
-sumOfNonCombinables = 0
-for i in range(len(combinables)):
-    if combinables[i] == 0:
-        sumOfNonCombinables += i
-
-print(sumOfNonCombinables)
-
-#print(abundantList)
